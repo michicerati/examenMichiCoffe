@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - Michi Cafe</title>
+    
+    <!-- Hoja de estilos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- REQUISITO: Navbar coherente -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    Michi Cafe
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- CAMBIO: Navbar actualizada -->
+                            <a class="nav-link active" aria-current="page" href="acerca.html">Quiénes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Menú (Productos)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- REQUISITO: HTML Semántico (main) -->
+    <main class="container mt-5 pt-5">
+        
+        <!-- REQUISITO: Contenido descriptivo, imágenes, texto, etc. -->
+        <section id="nuestra-historia" class="my-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4">Nuestra Historia: Pasión por el Café y los Gatos</h1>
+                    <!-- TEXTO DE EMPRESA REAL -->
+                    <p class="lead">Michi Cafe nació de un sueño simple: crear un espacio donde la gente pudiera desconectar del estrés diario y reconectar con la simple alegría de una buena taza de café y el ronroneo de un gato.</p>
+                    <p>Fundado en 2023 por amantes de los animales, nuestro café no es solo un negocio; es una misión. Colaboramos directamente con refugios locales para dar un hogar temporal a gatos adultos y cachorros que buscan una familia permanente. Cada gato que ves en nuestro lounge está disponible para adopción.</p>
+                    <p>Creemos en la "terapia de ronroneo" y en el poder de la comunidad. Nuestro espacio está diseñado para ser tu segundo hogar, ya sea que vengas a trabajar, a leer un libro o simplemente a relajarte.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/Fundadoraymichi.jpg" loading="lazy" class="img-fluid rounded shadow-sm img-cover" alt="Fundadora de Michi Cafe con un gato">
+                </div>
+            </div>
+        </section>
+
+        <!-- REQUISITO: Uso de listas -->
+        <section id="nuestros-valores" class="py-5 bg-light">
+            <div class="container text-center">
+                <h2>Nuestros Pilares</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="bi bi-check-circle-fill display-4 text-primary"></i>
+                        <h3 class="mt-3">Calidad</h3>
+                        <p>Solo servimos café de especialidad y postres hechos con ingredientes locales y frescos.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-heart-fill display-4 text-primary"></i>
+                        <h3 class="mt-3">Bienestar Animal</h3>
+                        <p>La salud y felicidad de nuestros gatos es prioridad. Viven sin jaulas y con chequeos veterinarios constantes.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-people-fill display-4 text-primary"></i>
+                        <h3 class="mt-3">Comunidad</h3>
+                        <p>Un espacio seguro e inclusivo para todos los amantes de los gatos y el buen café.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ***** INICIO DE SECCIÓN DE GATOS MOVIDA AQUÍ ***** -->
+        <section id="lista-gatos" class="my-5">
+            <div class="text-center mb-5">
+                <h2 class="display-4">Conoce a los Residentes</h2>
+                <p class="lead">Todos nuestros gatos están sanos, vacunados y listos para encontrar un hogar. ¡Enamórate de uno!</p>
+            </div>
+            
+            <!-- Fila de Gatos -->
+            <div class="row">
+                <!-- Gato 1: Moka -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="img/Michi1.jpg" loading="lazy" class="card-img-top img-cover" alt="Gato Moka">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Moka</h5>
+                            <p class="card-text">El Gerente General. Se toma muy en serio la supervisión de las siestas. Es tranquilo y le encanta que le rasquen la barbilla.</p>
+                            <span class="badge bg-primary align-self-start mt-auto">Listo para Adopción</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gato 2: Latte -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="img/Michi2.jpg" loading="lazy" class="card-img-top img-cover" alt="Gato Latte">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Latte</h5>
+                            <p class="card-text">Nuestra anfitriona. Te saludará en la puerta y pedirá caricias. Es muy juguetona y sociable.</p>
+                            <span class="badge bg-primary align-self-start mt-auto">Listo para Adopción</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gato 3: Espresso -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="img/Michi3.jpg" loading="lazy" class="card-img-top img-cover" alt="Gato Espresso">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Espresso</h5>
+                            <p class="card-text">Pequeño, pero con un carácter intenso. Le encanta jugar con los cordones y perseguir pelotitas.</p>
+                            <span class="badge bg-secondary align-self-start mt-auto">Aún no listo (Muy joven)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gato 4: Canela (Nuevo) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="img/latte.jpg" loading="lazy" class="card-img-top img-cover" alt="Gata Canela">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Canela</h5>
+                            <p class="card-text">Una gata tricolor muy tímida al principio, pero es un amor cuando entra en confianza. Le gusta dormir en cajas.</p>
+                            <span class="badge bg-primary align-self-start mt-auto">Lista para Adopción</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gato 5: Oreo (Nuevo) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="img/Oreo.jpeg" loading="lazy" class="card-img-top img-cover" alt="Gato Oreo">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Oreo</h5>
+                            <p class="card-text">Un elegante gato blanco y negro. Es muy independiente y prefiere que lo admiren de lejos, aunque acepta premios.</p>
+                            <span class="badge bg-primary align-self-start mt-auto">Listo para Adopción</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gato 6: Sombra (Nuevo) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm product-card">
+                        <img src="img/Pantera.jpeg" loading="lazy" class="card-img-top img-cover" alt="Gato Sombra">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Sombra</h5>
+                            <p class="card-text">Una panterita negra muy cariñosa y enérgica. Es experta en robar pan de dulce si te descuidas.</p>
+                            <span class="badge bg-primary align-self-start mt-auto">Lista para Adopción</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- ***** FIN DE SECCIÓN DE GATOS MOVIDA AQUÍ ***** -->
+
+    </main>
+
+    <!-- REQUISITO: Footer coherente -->
+    <footer class="py-4 footer-claro text-dark mt-auto">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="#" class="text-dark me-3 fs-4"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="text-dark me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-dark fs-4"><i class="bi bi-facebook"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Michi Cafe & Lounge S.A. de C.V. Todos los derechos reservados.</p>
+            <p>Un proyecto ficticio para fines educativos.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

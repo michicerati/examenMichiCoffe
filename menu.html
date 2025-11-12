@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Michi Cafe</title>
+    
+    <!-- Hoja de estilos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- REQUISITO: Diseño coherente (mismo navbar) -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    Michi Cafe
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="acerca.html">Quiénes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="menu.html">Menú (Productos)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- REQUISITO: HTML Semántico (main) -->
+    <main class="container mt-5 pt-5">
+        
+        <div class="text-center mb-5">
+            <h1 class="display-4">Nuestro Menú</h1>
+            <p class="lead">Bebidas artesanales y bocadillos hechos con amor. (Y aprobados por gatos).</p>
+        </div>
+
+        <!-- REQUISITO: Muestra al menos 3 productos en tarjetas -->
+        <!-- REQUISITO: Uso del sistema de grid de Bootstrap -->
+        <section id="productos">
+            <div class="row">
+
+                <!-- Producto 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="img/Ronroneo.jpg" loading="lazy" class="card-img-top img-cover" alt="Caramelo Macchiato">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Caramelo 'Ronroneo' Macchiato</h5>
+                            <!-- TEXTO DE EMPRESA REAL -->
+                            <p class="card-text">Nuestro best-seller. Espresso intenso, leche vaporizada y un toque de caramelo casero que te hará ronronear.</p>
+                            <!-- Botón estándar -->
+                            <a href="#" class="btn btn-outline-secondary mt-auto">Ver Opciones</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="img/patitas.jpg" loading="lazy" class="card-img-top img-cover" alt="Muffin de Arándano">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Muffin 'Patitas' de Arándano</h5>
+                            <!-- TEXTO DE EMPRESA REAL -->
+                            <p class="card-text">Esponjoso, tibio y lleno de arándanos frescos. Horneamos estos muffins cada mañana. ¡El complemento perfecto!</p>
+                            <!-- Botón estándar -->
+                            <a href="#" class="btn btn-outline-secondary mt-auto">Ver Ingredientes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 (Con Modal) -->
+                <!-- REQUISITO: Enlace a detalle (usando un modal de Bootstrap) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="img/Meow-cha.jpg" loading="lazy" class="card-img-top img-cover" alt="Matcha Latte">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Meow-cha Latte Verde</h5>
+                            <!-- TEXTO DE EMPRESA REAL -->
+                            <p class="card-text">Matcha ceremonial de grado premium batido con la leche de tu elección (entera, almendra o avena). Energía pura.</p>
+                            <!-- Botón que activa el modal -->
+                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#matchaModal">
+                                Más Información
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- REQUISITO: Componente Bootstrap (Modal) -->
+    <!-- Este es el modal para el Producto 3 -->
+    <div class="modal fade" id="matchaModal" tabindex="-1" aria-labelledby="matchaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="matchaModalLabel">Meow-cha Latte Verde</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- TEXTO DE EMPRESA REAL -->
+                    <img src="img/Meow-cha.jpg" loading="lazy" class="img-fluid rounded mb-3 img-cover" alt="Detalle de Matcha">
+                    <p>Nuestro Meow-cha Latte es una obra de arte. Utilizamos matcha ceremonial importado directamente de Uji, Japón, conocido por su vibrante color verde y su sabor suave y sin amargura.</p>
+                    <h6>Beneficios:</h6>
+                    <ul>
+                        <li>Alto en antioxidantes (L-teanina).</li>
+                        <li>Energía sostenida sin el "crash" del café.</li>
+                        <li>Promueve la calma y la concentración.</li>
+                    </ul>
+                    <h6>Opciones de Leche:</h6>
+                    <p>Entera, Deslactosada, Almendra, Avena (¡prueba la de avena!).</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Añadir a la orden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MEJORA DE DISEÑO: Cambiamos a 'footer-claro' para coherencia visual -->
+    <footer class="py-4 footer-claro text-dark mt-5">
+        <div class="container text-center">
+            <div class="mb-3">
+                <!-- Iconos de redes sociales -->
+                <a href="#" class="text-dark me-3 fs-4"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="text-dark me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-dark fs-4"><i class="bi bi-facebook"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Michi Cafe. Todos los derechos reservados.</p>
+            <p>Un proyecto ficticio para fines educativos.</p>
+        </div>
+    </footer>
+
+    <!-- CORRECCIÓN: Añadido script de JS de Bootstrap que faltaba -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

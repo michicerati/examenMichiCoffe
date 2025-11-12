@@ -1,0 +1,279 @@
+/* REQUISITO: Usar al menos una hoja de estilo externa (style.css) */
+
+/* CAMBIO: Volvemos a 'Pacifico' (script) para los títulos */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Pacifico&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Añadimos un padding-top para compensar el navbar fijo */
+    padding-top: 70px; 
+}
+
+/* Estilos para el Hero Section */ 
+    /* Puedes descomentar esto para añadir un fondo degradado si lo deseas */
+    /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,230,220,1) 100%); */
+
+
+/* --- Fuentes Creativas --- */
+h1, h2, h3, h4, h5, h6 {
+    /* CAMBIO: Volvemos a Pacifico */
+    font-family: 'Pacifico', cursive; 
+}
+
+.navbar-brand {
+    /* CAMBIO: Volvemos a Pacifico */
+    font-family: 'Pacifico', cursive;
+    font-size: 1.7rem; 
+}
+
+/* Personalización de colores de Bootstrap (Opcional) */
+/* Esto ayuda a que el tema "Michi Cafe" sea coherente */
+:root {
+    --bs-primary: #8F5E36; /* Un color café */
+    --bs-primary-rgb: 143, 94, 54;
+    --bs-light: #F8F5F2; /* Un beige claro */
+    --bs-light-rgb: 248, 245, 242;
+    --bs-secondary: #EAD9C8; /* Un acento más claro */
+}
+
+/* Forzamos a que .bg-light use nuestra variable personalizada */
+.bg-light {
+    background-color: var(--bs-light) !important;
+}
+
+
+/* --- Botones más suaves y creativos --- */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    /* CAMBIO: De píldora (50px) a un rectángulo con bordes suaves (8px) */
+    border-radius: 8px; 
+    padding: 0.6rem 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase; /* Letras mayúsculas */
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease-out;
+}
+
+.btn-primary:hover {
+    background-color: #7a4f2d;
+    border-color: #7a4f2d;
+    transform: translateY(-3px); /* Efecto de levantar el botón */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Estilo consistente para botones secundarios y claros */
+.btn-outline-secondary, .btn-light {
+    /* CAMBIO: De píldora (50px) a un rectángulo con bordes suaves (8px) */
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--bs-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* Ajustar el color del texto del CTA de suscripción */
+#newsletter-cta {
+    background-color: var(--bs-primary);
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+/* --- Estilos de Componentes --- */
+
+/* Navbar con sombra suave */
+.navbar {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+/* Enlace activo de la navbar */
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: var(--bs-primary) !important;
+    font-weight: 700;
+}
+
+/* Iconos de características (Landing Page) */
+#features .bi {
+    font-size: 2.5rem;
+    width: 75px;
+    height: 75px;
+    line-height: 75px; /* Centra el icono verticalmente */
+    /* CAMBIO: De círculo (50%) a un "cuadrado redondeado" (12px) */
+    border-radius: 12px;
+    background-color: white;
+    color: var(--bs-primary);
+    box-shadow: 0 5px 15px rgba(143, 94, 54, 0.15);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#features .col-md-4:hover .bi {
+    /* CAMBIO: Quitamos la rotación "orgánica" y dejamos solo el escalado */
+    transform: scale(1.1); 
+    background-color: var(--bs-primary);
+    color: white;
+}
+
+/* Tarjetas (Página de Menú) con efecto hover */
+.card {
+    border: none; /* Quitamos el borde por defecto */
+    border-radius: 12px; /* Esquinas más redondeadas */
+    overflow: hidden; /* Asegura que la imagen respete el borde redondeado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* CAMBIO: Haremos que la imagen haga zoom en lugar de que "flote" la tarjeta */
+.card img {
+    transition: transform 0.3s ease;
+}
+
+/* --- Ajustes de tamaño y recorte para imágenes (mejor presentación) --- */
+/* Hero: proporción más natural y altura fija */
+#hero img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Carousel: formato panorámico con altura fija */
+.carousel-inner img,
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tarjetas de productos con altura fija */
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Modal de detalle con altura controlada */
+.modal-body img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Ajustes responsive para pantallas medianas */
+@media (max-width: 768px) {
+    #hero img { height: 300px; }
+    .carousel-inner img,
+    .carousel-item img { height: 300px; }
+    .card-img-top { height: 200px; }
+    .modal-body img { height: 250px; }
+}
+
+/* Ajustes responsive para pantallas pequeñas */
+@media (max-width: 576px) {
+    #hero img { height: 200px; }
+    .carousel-inner img,
+    .carousel-item img { height: 200px; }
+    .card-img-top { height: 180px; }
+    .modal-body img { height: 200px; }
+}
+
+/* Clase utilitaria: imagen que cubre su contenedor sin deformarse */
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Clases para ajustar el punto focal por imagen */
+.focus-top { object-position: center top !important; }
+.focus-center { object-position: center center !important; }
+.focus-bottom { object-position: center bottom !important; }
+
+.card:hover {
+    /* CAMBIO: Quitamos el transform: translateY(-10px); */
+    box-shadow: 0 12px 24px rgba(143, 94, 54, 0.2); /* Sombra más pronunciada con color café */
+}
+
+/* Añadimos el efecto de zoom a la imagen de la tarjeta */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- MEJORA: Footer Coherente --- */
+/* Hacemos que el footer "footer-claro" use el fondo beige */
+.footer-claro {
+    background-color: var(--bs-light);
+    border-top: 1px solid #ddd; /* Una línea sutil para separarlo */
+}
+
+/* --- MEJORA: Formularios con Estilo --- */
+/* Hacemos que los formularios coincidan con el branding */
+.form-control:focus, .form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(143, 94, 54, 0.25); /* Sombra de focus color café */
+}
+
+.form-control, .form-select {
+    border-radius: 8px; /* Mismos bordes que los botones */
+}
+/* --- Efecto Huellita 🐾 (Creatividad) --- */
+/* ¡AQUÍ ESTÁ LA HUELLITA! */
+.navbar .nav-link {
+    position: relative;
+    padding-left: 28px; /* Damos espacio para la huella */
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link::before {
+    content: '🐾'; /* ¡La huellita! */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0); /* Oculta por defecto */
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: var(--bs-primary);
+    font-size: 0.8rem;
+}
+
+/* Muestra la huellita en 'hover' o si es la página 'activa' */
+.navbar .nav-link:hover::before,
+.navbar .nav-link.active::before {
+    transform: translateY(-50%) scale(1); /* La hace aparecer */
+    opacity: 1;
+}
+/* --- Arreglo para "Acomodar" Imágenes --- */
+.img-cover {
+    width: 100%;
+    height: 400px; /* Altura fija para 'hero' y 'carrusel' */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+    object-position: center; /* Centra la imagen */
+}
+
+/* Ajuste específico para las tarjetas de producto (más pequeñas) */
+.product-card .img-cover {
+    height: 250px;
+}
+/* Ajuste para el mapa en contacto */
+#contacto .img-cover {
+    height: 300px;
+}
