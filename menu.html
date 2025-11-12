@@ -42,6 +42,11 @@
                             <a class="nav-link" href="contacto.html">Contacto</a>
                         </li>
                     </ul>
+                    <!-- Botón de carrito -->
+                    <button class="btn btn-outline-secondary ms-3 position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+                        <i class="bi bi-cart-fill"></i>
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -68,8 +73,8 @@
                             <h5 class="card-title">Caramelo 'Ronroneo' Macchiato</h5>
                             <!-- TEXTO DE EMPRESA REAL -->
                             <p class="card-text">Nuestro best-seller. Espresso intenso, leche vaporizada y un toque de caramelo casero que te hará ronronear.</p>
-                            <!-- Botón estándar -->
-                            <a href="#" class="btn btn-outline-secondary mt-auto">Ver Opciones</a>
+                            <!-- Botón que abre modal con opciones -->
+                            <button type="button" class="btn btn-outline-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#carameloModal">Ver Opciones</button>
                         </div>
                     </div>
                 </div>
@@ -82,8 +87,8 @@
                             <h5 class="card-title">Muffin 'Patitas' de Arándano</h5>
                             <!-- TEXTO DE EMPRESA REAL -->
                             <p class="card-text">Esponjoso, tibio y lleno de arándanos frescos. Horneamos estos muffins cada mañana. ¡El complemento perfecto!</p>
-                            <!-- Botón estándar -->
-                            <a href="#" class="btn btn-outline-secondary mt-auto">Ver Ingredientes</a>
+                            <!-- Botón que abre modal con ingredientes -->
+                            <button type="button" class="btn btn-outline-secondary mt-auto" data-bs-toggle="modal" data-bs-target="#patitasModal">Ver Ingredientes</button>
                         </div>
                     </div>
                 </div>
@@ -121,7 +126,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- TEXTO DE EMPRESA REAL -->
-                    <img src="img/Meow-cha.jpg" loading="lazy" class="img-fluid rounded mb-3 img-cover" alt="Detalle de Matcha">
+                    <img src="img/meow-cha.jpg" loading="lazy" class="img-fluid rounded mb-3 img-cover" alt="Detalle de Matcha">
                     <p>Nuestro Meow-cha Latte es una obra de arte. Utilizamos matcha ceremonial importado directamente de Uji, Japón, conocido por su vibrante color verde y su sabor suave y sin amargura.</p>
                     <h6>Beneficios:</h6>
                     <ul>
@@ -134,7 +139,80 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Añadir a la orden</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addToCart({name: 'Meow-cha Latte Verde', price: 55, img: 'img/Meow-cha.jpg'})">Añadir a la orden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offcanvas carrito -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel">Tu Pedido</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cart-items" class="mb-3">
+                <!-- Items will be rendered here -->
+            </div>
+            <div class="mt-auto">
+                <p class="fw-bold">Total: $<span id="cart-total">0</span></p>
+                <div class="d-flex gap-2">
+                    <button id="clear-cart" class="btn btn-outline-secondary" onclick="clearCart()">Vaciar</button>
+                    <button id="checkout" class="btn btn-primary" onclick="checkout()">Finalizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Producto 1: Caramelo 'Ronroneo' Macchiato -->
+    <div class="modal fade" id="carameloModal" tabindex="-1" aria-labelledby="carameloModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carameloModalLabel">Caramelo 'Ronroneo' Macchiato - Opciones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/Ronroneo.jpg" class="img-fluid rounded mb-3 img-cover" alt="Caramelo Macchiato">
+                    <p>Escoge tamaño y tipo de leche. Nuestro Caramelo 'Ronroneo' viene en:</p>
+                    <ul>
+                        <li>Chico / Mediano / Grande</li>
+                        <li>Leche: Entera / Deslactosada / Almendra / Avena</li>
+                        <li>Opcional: extra caramelo, crema batida</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addToCart({name: 'Caramelo \u0027Ronroneo\u0027 Macchiato', price: 45, img: 'img/Ronroneo.jpg'})">Añadir a la orden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Producto 2: Muffin 'Patitas' de Arándano -->
+    <div class="modal fade" id="patitasModal" tabindex="-1" aria-labelledby="patitasModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="patitasModalLabel">Muffin 'Patitas' de Arándano - Ingredientes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/patitas.jpg" class="img-fluid rounded mb-3 img-cover" alt="Muffin de Arándano">
+                    <p>Ingredientes principales:</p>
+                    <ul>
+                        <li>Harina de trigo</li>
+                        <li>Huevos</li>
+                        <li>Azúcar</li>
+                        <li>Arándanos frescos</li>
+                        <li>Mantequilla y leche</li>
+                    </ul>
+                    <p>Contiene gluten y huevo. Consulta opciones sin lactosa.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addToCart({name: 'Muffin \u0027Patitas\u0027 de Ar\u00E1ndano', price: 25, img: 'img/patitas.jpg'})">Añadir a la orden</button>
                 </div>
             </div>
         </div>
@@ -156,5 +234,6 @@
 
     <!-- CORRECCIÓN: Añadido script de JS de Bootstrap que faltaba -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="logic.js"></script>
 </body>
 </html>
